@@ -93,6 +93,7 @@ while 1:
         stockName1 = str(stockName)
         print "Selected stock is " + stockName1
 
+
         date1 = str(date)
         price1 = str(price)
         pricelength = len(price1)
@@ -107,8 +108,43 @@ while 1:
         shares2 = str(shares)
         total = price3 * shares1
 
+        #numApple = lineInTrans3[:4]
+        #numAmazon = lineInTrans3[18:22]
+        #numGoogle = lineInTrans3[37:41]
+        numApple = int(numApple)
+        numAmazon = int(numAmazon)
+        numGoogle = int(numGoogle)
+        numApple1 = str(numApple)
+        numAmazon1 = str(numAmazon)
+        numGoogle1 = str(numGoogle)
+
+        if stockNum == 1:
+            stockName = "Apple"
+            if shares1 > numApple:
+                print "Please select a number of shares less than " + numApple1
+            else:
+                numApple = numApple - shares1
+        elif stockNum == 2:
+            stockName = "Amazon"
+            if shares1 > numAmazon:
+                print "Please select a number of shares less than " + numAmazon1
+            else:
+                numAmazon = numAmazon - shares1
+        elif stockNum == 3:
+            stockName = "Google"
+            if shares1 > numGoogle:
+                print "Please select a number of shares less than " + numGoogle1
+            else:
+                numGoogle = numGoogle - shares1
+
+        numApple1 = str(numApple)
+        numAmazon1 = str(numAmazon)
+        numGoogle1 = str(numGoogle)
+        stocksLeft = numApple1 + " of Apple ||| " + numAmazon1 + " of Amazon ||| " + numGoogle1 + " of Google"
+
+
         total1 = str(total)
-        totalresult = "Total price of " + shares2 + " shares of stock is $" + total1
+        totalresult = "Total price of " + shares2 + " shares of " + stockName1 + " is $" + total1
         print totalresult
 
 
@@ -125,29 +161,6 @@ while 1:
         print "Line count is " + lineCounter1
 
         #print lineInTrans3
-
-        #numApple = lineInTrans3[:4]
-        #numAmazon = lineInTrans3[18:22]
-        #numGoogle = lineInTrans3[37:41]
-        numApple = int(numApple)
-        numAmazon = int(numAmazon)
-        numGoogle = int(numGoogle)
-
-        if stockNum == 1:
-            stockName = "Apple"
-            numApple = numApple - shares1
-        elif stockNum == 2:
-            stockName = "Amazon"
-            numAmazon = numAmazon - shares1
-        elif stockNum == 3:
-            stockName = "Google"
-            numAmazon = numAmazon - shares1
-
-        numApple1 = str(numApple)
-        numAmazon1 = str(numAmazon)
-        numGoogle1 = str(numGoogle)
-        stocksLeft = numApple1 + " of Apple ||| " + numAmazon1 + " of Amazon ||| " + numGoogle1 + " of Google"
-
 
         #Keep a HISTORY file of all transactions
         transHistory = open('TRANSACTION_HISTORY', 'a')
