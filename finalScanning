@@ -1,3 +1,8 @@
+import random
+import datetime as dt
+
+todayDate = dt.datetime.today().strftime("%m/%d/%Y")
+print todayDate
 
 numApple = 9999
 numTesla = 9999
@@ -7,8 +12,12 @@ numNetflix = 9999
 numFacebook = 9999
 numMicrosoft = 9999
 
+randomStock = random.randint(1, 7)
+randomStock1 = str(randomStock)
+print randomStock1
+
 while 1:
-    question = input("Would you like to buy more stocks? 1==yes | 2==no: ")
+    question = input("Would you like to buy more stocks? 1=yes, 2=no: ")
     question1 = int(question)
 
     if question == 1:
@@ -20,7 +29,7 @@ while 1:
         #    break
 
         stockNum = raw_input("Enter your preffered stock. 1=Apple, 2=Amazon, 3=Google, 4=Netflix, 5=Facebook, 6=Microsoft, 7=Tesla: ")
-        date = raw_input("Enter the 2016 date that you would like to search up in mm/dd/yy format: \n")
+        date = raw_input("To search up the stock price, enter today's date in mm/dd/yy format: \n")
         datetemp = " "
         price = 0
         stockNameActual = ""
@@ -132,7 +141,7 @@ while 1:
         pricelength = pricelength - 2
         price2 = price[1:pricelength]
         price3 = float(price2)
-        stockResult = "The price of " + stockName1 + " at " + date1 + " was " + price1
+        stockResult = "The price of " + stockName1 + " today, " + date1 + ", is " + price1
         print stockResult
 
         shares = raw_input("Enter how many shares of " + stockName1 + " you would like: ")
@@ -226,7 +235,7 @@ while 1:
                 lineInTrans3 = line
             lineCounter = lineCounter + 1
         lineCounter1 = str(lineCounter)
-        print "Line count is " + lineCounter1
+        #print "Line count is " + lineCounter1
 
         #print lineInTrans3
 
