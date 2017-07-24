@@ -1,7 +1,11 @@
 
 numApple = 9999
+numTesla = 9999
 numAmazon = 9999
 numGoogle = 9999
+numNetflix = 9999
+numFacebook = 9999
+numMicrosoft = 9999
 
 while 1:
     question = input("Would you like to buy more stocks? 1==yes | 2==no: ")
@@ -15,7 +19,7 @@ while 1:
         #    print ""
         #    break
 
-        stockNum = raw_input("Enter your preffered stock. 1=Apple, 2=Amazon, 3=Google: ")
+        stockNum = raw_input("Enter your preffered stock. 1=Apple, 2=Amazon, 3=Google, 4=Netflix, 5=Facebook, 6=Microsoft, 7=Tesla: ")
         date = raw_input("Enter the 2016 date that you would like to search up in mm/dd/yy format: \n")
         datetemp = " "
         price = 0
@@ -25,6 +29,10 @@ while 1:
         apple = open('apple.txt', 'r' )
         amazon = open('amazon.txt', 'r' )
         google = open('google.txt', 'r' )
+        netflix = open('netflix.txt', 'r' )
+        facebook = open('facebook.txt', 'r' )
+        microsoft = open('microsoft.txt', 'r' )
+        tesla = open('tesla.txt', 'r' )
         counter = 0
         priceCounter = 0
         stockName = ""
@@ -86,9 +94,33 @@ while 1:
                 if priceCounter == lineNumber - 1:
                     price = line
                 priceCounter = priceCounter + 1
+        elif stockNum == 4:
+            stockName = "Netflix"
+            for line in netflix:
+                if priceCounter == lineNumber - 1:
+                    price = line
+                priceCounter = priceCounter + 1
+        elif stockNum == 5:
+            stockName = "Facebook"
+            for line in facebook:
+                if priceCounter == lineNumber - 1:
+                    price = line
+                priceCounter = priceCounter + 1
+        elif stockNum == 6:
+            stockName = "Microsoft"
+            for line in microsoft:
+                if priceCounter == lineNumber - 1:
+                    price = line
+                priceCounter = priceCounter + 1
+        elif stockNum == 7:
+            stockName = "Tesla"
+            for line in tesla:
+                if priceCounter == lineNumber - 1:
+                    price = line
+                priceCounter = priceCounter + 1
         else:
             stockName = "NA"
-            print "Please enter a number from 1-3"
+            print "Please enter a number from 1-7"
 
         stockName1 = str(stockName)
         print "Selected stock is " + stockName1
@@ -114,9 +146,16 @@ while 1:
         numApple = int(numApple)
         numAmazon = int(numAmazon)
         numGoogle = int(numGoogle)
+        numNetflix = int(numNetflix)
+        numFacebook = int(numFacebook)
+        numMicrosoft = int(numMicrosoft)
         numApple1 = str(numApple)
         numAmazon1 = str(numAmazon)
         numGoogle1 = str(numGoogle)
+        numNetflix1 = str(numNetflix)
+        numFacebook1 = str(numFacebook)
+        numMicrosoft1 = str(numMicrosoft)
+        numTesla1 = str(numTesla)
 
         if stockNum == 1:
             stockName = "Apple"
@@ -136,11 +175,40 @@ while 1:
                 print "Please select a number of shares less than " + numGoogle1
             else:
                 numGoogle = numGoogle - shares1
+        elif stockNum == 4:
+            stockName = "Netflix"
+            if shares1 > numNetflix:
+                print "Please select a number of shares less than " + numNetflix1
+            else:
+                numNetflix = numNetflix - shares1
+        elif stockNum == 5:
+            stockName = "Facebook"
+            if shares1 > numFacebook:
+                print "Please select a number of shares less than " + numFacebook1
+            else:
+                numFacebook = numFacebook - shares1
+        elif stockNum == 6:
+            stockName = "Microsoft"
+            if shares1 > numMicrosoft:
+                print "Please select a number of shares less than " + numMicrosoft1
+            else:
+                numMicrosoft = numMicrosoft - shares1
+        elif stockNum == 7:
+            stockName = "Tesla"
+            if shares1 > numTesla:
+                print "Please select a number of shares less than " + numTesla1
+            else:
+                numTesla = numTesla - shares1
+
 
         numApple1 = str(numApple)
         numAmazon1 = str(numAmazon)
         numGoogle1 = str(numGoogle)
-        stocksLeft = numApple1 + " of Apple ||| " + numAmazon1 + " of Amazon ||| " + numGoogle1 + " of Google"
+        numNetflix1 = str(numNetflix)
+        numFacebook1 = str(numFacebook)
+        numMicrosoft1 = str(numMicrosoft)
+        numTesla1 = str(numTesla)
+        stocksLeft = numApple1 + " of Apple | " + numAmazon1 + " of Amazon | " + numGoogle1 + " of Google | " + numNetflix1 + " of Netflix | " + numFacebook1 + " of Facebook | " + numMicrosoft1 + " of Microsoft | " + numTesla1 + " of Tesla"
 
 
         total1 = str(total)
