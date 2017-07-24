@@ -22,12 +22,6 @@ while 1:
 
     if question == 1:
 
-        #if numAmazon < 1000 or numApple < 1000 or numGoogle < 1000:
-        #    print "Not enough stocks left to trade"
-        #    print ""
-        #    print ""
-        #    break
-
         stockNum = raw_input("Enter your preffered stock. 1=Apple, 2=Amazon, 3=Google, 4=Netflix, 5=Facebook, 6=Microsoft, 7=Tesla: ")
         date = raw_input("To search up the stock price, enter today's date in mm/dd/yy format: \n")
         datetemp = " "
@@ -137,17 +131,13 @@ while 1:
 
         date1 = str(date)
         price1 = str(price)
-        pricelength = len(price1)
-        pricelength = pricelength - 2
-        price2 = price[1:pricelength]
-        price3 = float(price2)
         stockResult = "The price of " + stockName1 + " today, " + date1 + ", is " + price1
         print stockResult
 
         shares = raw_input("Enter how many shares of " + stockName1 + " you would like: ")
         shares1 = int(shares)
         shares2 = str(shares)
-        total = price3 * shares1
+        total = price * shares1
 
         #numApple = lineInTrans3[:4]
         #numAmazon = lineInTrans3[18:22]
