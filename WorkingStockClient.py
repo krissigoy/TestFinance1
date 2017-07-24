@@ -261,17 +261,14 @@ if __name__ == "__main__":
 
             date1 = str(date)
             price1 = str(price)
-            pricelength = len(price1)
-            pricelength = pricelength - 2
-            price2 = price[1:pricelength]
-            price3 = float(price2)
+
             stockResult = "The price of " + stockName1 + " today, " + date1 + ", is " + price1
             print stockResult
 
             shares = raw_input("Enter how many shares of " + stockName1 + " you would like: ")
             shares1 = int(shares)
             shares2 = str(shares)
-            total = price3 * shares1
+            total = price * shares1
 
 
             numApple = int(numApple)
