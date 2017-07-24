@@ -171,7 +171,6 @@ class ServerCommService:
 #should not be a global. for testing
 server = ServerCommService()
 def echohandler(message):
-    print "got it"
     print message
     print "\n"
 
