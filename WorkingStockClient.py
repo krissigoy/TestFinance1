@@ -261,6 +261,10 @@ if __name__ == "__main__":
 
             date1 = str(date)
             price1 = str(price)
+            pricelength = len(price1)
+            pricelength = pricelength - 2
+            price2 = price[1:pricelength]
+            price3 = float(price2)
 
             stockResult = "The price of " + stockName1 + " today, " + date1 + ", is " + price1
             print stockResult
