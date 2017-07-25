@@ -164,6 +164,7 @@ class ServerCommService:
 
             elif self.sock.recv(1024) == 0:
                 self.stop()
+                break
 
     def stop(self):
         self.active = False
@@ -182,4 +183,3 @@ def echohandler(message):
 if __name__ == "__main__":
 
     server.initCommServer(echohandler)
- 
