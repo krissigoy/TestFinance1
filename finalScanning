@@ -21,7 +21,7 @@ while 1:
     question1 = int(question)
 
     if question == 1:
-
+ 
         stockNum = raw_input("Enter your preffered stock. 1=Apple, 2=Amazon, 3=Google, 4=Netflix, 5=Facebook, 6=Microsoft, 7=Tesla: ")
         date = raw_input("To search up the stock price, enter today's date in mm/dd/yy format: \n")
         datetemp = " "
